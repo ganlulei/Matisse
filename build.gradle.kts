@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.github.ganlulei"
-version = "2.3.3"
+version = "2.3.5"
 
 android {
     namespace = "github.leavesczy.matisse"
@@ -19,6 +19,12 @@ android {
     defaultConfig {
         minSdk = 23
         consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
     }
 
     buildFeatures {
@@ -33,6 +39,10 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    publishing {
+        singleVariant("release")
     }
 }
 
