@@ -10,14 +10,14 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins {
+        id("com.android.library") version "9.0.0"
+        id("org.jetbrains.kotlin.plugin.parcelize") version "2.3.0"
+        id("org.jetbrains.kotlin.plugin.compose") version "2.3.0"
+    }
 }
 
 dependencyResolutionManagement {
-    versionCatalogs {
-        create("libs") {
-            from(files("gradle/libs.versions.toml"))
-        }
-    }
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
