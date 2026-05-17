@@ -2,14 +2,14 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.plugin.parcelize")
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("maven-publish")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.maven.publish)
 }
 
 group = "com.github.ganlulei"
-version = "2.3.1"
+version = "2.3.2"
 
 android {
     namespace = "github.leavesczy.matisse"
@@ -49,16 +49,15 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2026.01.00")
-    implementation("androidx.appcompat:appcompat:1.7.1")
-    implementation("androidx.activity:activity-compose:1.12.2")
-    implementation(composeBom)
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.foundation:foundation")
-    implementation("androidx.compose.material:material-icons-extended")
-    implementation("androidx.compose.material3:material3")
-    compileOnly("io.coil-kt.coil3:coil-compose:3.3.0")
-    compileOnly("com.github.bumptech.glide:compose:1.0.0-beta08")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.compose.material3)
+    compileOnly(libs.coil.compose)
+    compileOnly(libs.glide.compose)
 }
 
 afterEvaluate {

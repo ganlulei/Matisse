@@ -1,0 +1,27 @@
+[versions]
+agp = "9.0.0"
+kotlin = "2.3.0"
+androidx-appcompat = "1.7.1"
+activityCompose = "1.12.2"
+composeBom = "2026.01.00"
+materialIcons = "1.6.7"
+material3 = "1.5.0-alpha13"
+coil = "3.3.0"
+glideCompose = "1.0.0-beta08"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-foundation = { module = "androidx.compose.foundation:foundation" }
+androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIcons" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+glide-compose = { module = "com.github.bumptech.glide:compose", version.ref = "glideCompose" }
+
+[plugins]
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+maven-publish = { id = "maven-publish" }
