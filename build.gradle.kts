@@ -60,3 +60,13 @@ dependencies {
     compileOnly("io.coil-kt.coil3:coil-compose:3.3.0")
     compileOnly("com.github.bumptech.glide:compose:1.0.0-beta08")
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+            }
+        }
+    }
+}
